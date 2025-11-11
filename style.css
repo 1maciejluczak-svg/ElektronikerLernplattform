@@ -1,0 +1,180 @@
+body {
+  background-color: #edf0ef;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: white;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  padding: 3px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  background-color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 14px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+nav a { 
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+nav a.active {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+main p {
+  font-size: 30px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: justify;
+}
+
+#home {
+  font-size: 25px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 40px;          /* odstęp od dołu */
+  right: 40px;           /* po prawej stronie ekranu */
+  background: #3b82f6;   /* niebieski przycisk */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;           /* większy rozmiar */
+  height: 70px;
+  font-size: 36px;       /* większa strzałka */
+  cursor: pointer;
+  display: none;         /* ukryty domyślnie */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background: #2563eb;   /* jaśniejszy niebieski po najechaniu */
+  transform: scale(1.1);
+}
+section {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+footer {
+  text-align: center;
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* tu już zadziała 👍 */
+.pdf-area p {
+  font-size: 30px;
+  line-height: 1.6;
+}
+.pdf-area h2 {
+  font-size: 40px;
+  line-height: 1.6;
+  color:#1e293b;
+}
+
+#tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  background: #e2e8f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl pojedynczych przycisków */
+#tools-list button {
+  background-color: #1e293b;       /* ciemny granat jak w menu */
+  color: #f8fafc;                  /* jasny tekst */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Efekt hover */
+#tools-list button:hover {
+  background-color: #3b82f6;       /* niebieski akcent */
+  transform: translateY(-2px);     /* lekko unosi przycisk */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+.pdf-area img {
+  max-width: 250px;        /* maksymalna szerokość zdjęcia */
+  height: auto;            /* zachowaj proporcje */
+  border-radius: 10px;     /* zaokrąglenie rogów */
+  margin: 10px 20px;       /* odstęp od tekstu */
+  float: right;            /* zdjęcie po prawej stronie tekstu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* delikatny cień */
+}
+.pdf-area video {
+  max-width: 500px;        /* maksymalna szerokość zdjęcia */
+  height: auto;            /* zachowaj proporcje */
+  border-radius: 10px;     /* zaokrąglenie rogów */
+  margin: 10px 20px;       /* odstęp od tekstu */
+  float: right;            /* zdjęcie po prawej stronie tekstu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* delikatny cień */
+}
+.img-area img {
+  max-width: 500px;        /* maksymalna szerokość zdjęcia */
+  height: auto;            /* zachowaj proporcje */
+  border-radius: 10px;     /* zaokrąglenie rogów */
+  margin: 10px 20px;       /* odstęp od tekstu */
+  float: right;            /* zdjęcie po prawej stronie tekstu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* delikatny cień */
+
+
+
+

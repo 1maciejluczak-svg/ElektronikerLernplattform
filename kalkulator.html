@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8"/>
+  |<meta name="viewport" content"width=device-width,initial-scale=1.0"/>
+     <title>Interaktives Lernvideo</title>
+	 <link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+  <meta name="description" content="Opis narzedzi potrzebnych elektrykowi"/>
+</head>
+
+<body>
+<header> <a href="Indeks.html" ><img src="IMG/logo2.png" type="png"></a></header>
+<nav>
+         <a href="Indeks.html">Home</a>
+		 <a href="video.html">Video-Enzyklopädie</a>
+		 <a href="tools.html">Werkzeug-Enzyklopädie</a>
+		 <a href="kalkulator.html" class="active">Elektrizitäts-Rechner</a>
+         <a href="uberuns.html">Über uns</a></li>  
+</nav>
+
+<h1>Kalkulator Ohm R=U/I</h1>
+
+<div>
+  <button id="btnU" onclick="wybierzTryb('U')">Spannung (U)</button>
+  <button id="btnI" onclick="wybierzTryb('I')">Strom (I)</button>
+  <button id="btnR" onclick="wybierzTryb('R')">Widerstand (R)</button>
+</div>
+
+<div>
+  <label>Spannung (V):</label>
+  <input type="number" id="Spannung" placeholder="z.B. 12">
+
+  <label>Strom (A):</label>
+  <input type="number" id="Strom" placeholder="z.B. 2">
+
+  <label>Widerstand (Ω):</label>
+  <input type="number" id="Widerstand" placeholder="z.B. 6">
+</div>
+
+<button onclick="oblicz()">Rechnen</button>
+
+<div id="Ergebnis"></div>
+
+<script>
+  let tryb = null;
+
+  function wybierzTryb(wybor) {
+    tryb = wybor;
+
+    document.getElementById("btnU").disabled = false;
+    document.getElementById("btnI").disabled = false;
+    document.getElementById("btnR").disabled = false;
+    document.getElementById("btn" + wybor).disabled = true;
+
+    document.getElementById("Spannung").disabled = false;
+    document.getElementById("Strom").disabled = false;
+    document.getElementById("Widerstand").disabled = false;
+
+    if (wybor === "U") document.getElementById("Spannung").disabled = true;
+    if (wybor === "I") document.getElementById("Strom").disabled = true;
+    if (wybor === "R") document.getElementById("Widerstand").disabled = true;
+
+    document.getElementById("Ergebnis").innerText = "";
+  }
+
+  function oblicz() {
+    let U = parseFloat(document.getElementById("Spannung").value);
+    let I = parseFloat(document.getElementById("Strom").value);
+    let R = parseFloat(document.getElementById("Widerstand").value);
+    let Ergebnis = "";
+
+    if (!tryb) {
+      Ergebnis = "Zuerst die gewünschte Größe auswählen.";
+    } else if (tryb === "U") {
+      if (isNaN(I) || isNaN(R)) Ergebnis = "Strom und Widerstand eingeben.";
+      else Ergebnis = `Spannung U = ${(I * R).toFixed(2)} V`;
+    } else if (tryb === "I") {
+      if (isNaN(U) || isNaN(R)) Ergebnis = "Spannung und Widerstand eingeben.";
+      else Ergebnis = `Strom I = ${(U / R).toFixed(2)} A`;
+    } else if (tryb === "R") {
+      if (isNaN(U) || isNaN(I)) Ergebnis = "Spannung und Strom eingeben.";
+      else Ergebnis = `Widerstand R = ${(U / I).toFixed(2)} Ω`;
+    }
+
+    document.getElementById("Ergebnis").innerText = Ergebnis;
+  }
+</script>
+
+
+</main>
+<footer>
+<p>&copy; 2025 Elektriker-Lernplattform  Bennet Mark Grussie Tom Maciej Luczak </p>
+</footer>
+</body>
+</html>

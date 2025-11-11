@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8"/>
+  |<meta name="viewport" content"width=device-width,initial-scale=1.0"/>
+     <title>Interaktives Lernvideo</title>
+	 <link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+  <meta name="description" content="Opis narzedzi potrzebnych elektrykowi"/>
+</head>
+
+<body>
+<header> <a href="Indeks.html" ><img src="IMG/logo2.png" type="png"></a></header>
+<nav>
+         <a href="Indeks.html" >Home</a>
+		 <a href="video.html">Video-Enzyklopädie</a>
+		 <a href="tools.html">Werkzeug-Enzyklopädie</a>
+		 <a href="kalkulator.html">Elektrizitäts-Rechner</a>
+         <a href="uberuns.html" class="active">Über uns</a></li>  
+</nav>
+<main class="img-area"><img src="IMG/cat1.jpg" type="jpg"></main>
+<main class="pdf-area">
+ <section id="tools-list">
+		  <button onclick="scrollToTool('CAT I')">CAT I</button>
+		  <button onclick="scrollToTool('CAT II')">CAT II</button>
+		  <button onclick="scrollToTool('CAT III')">CAT III</button>
+		  <button onclick="scrollToTool('CAT VI')">CAT VI</button>
+ </section>
+
+<article id="CAT I" class="tool-secton">
+   <h2>CAT I</h2>
+   <img src="IMG/abisolierzange.jpg" alt="CAT I">
+  <p>
+  <strong>Geschützte Elektronikvorrichtungen</strong><br>
+  • Geräte, die an Stromkreise angeschlossen werden, in denen Vorkehrungen getroffen wurden, 
+  um transiente Überspannungen auf ein niedriges Niveau zu begrenzen.<br>
+  • Jede Hochspannungsquelle mit geringer Energie, die von einem Widerstandstransformator 
+  mit hoher Windungszahl abgeleitet wird, zum Beispiel der Hochspannungsteil eines Kopierers.
+</p>
+
+</article>
+<article id="CAT II" class="tool-secton">
+   <h2>CAT II</h2>
+   <img src="IMG/Crimpzange.jpg" alt="CAT II">
+   <p>
+Hausgeräte, portable Werkzeuge und ähnliche Lasten<br>•Steckdosen und lange Abzweigleitungen<br>•Steckdosen mehr als 10 Meter von CAT III Quelle entfernt•Steckdosen mehr als 20 Meter von CAT IV Quelle entfernt
+</p>
+</article>
+<article id="CAT III" class="tool-secton">
+   <h2>CAT III</h2>
+   <img src="IMG/verteiler.jpg" alt="CAT III">
+   <p>
+Geräte in Festinstallationen, z.B. Schaltgeräte und mehrphasige Motoren <br>•Sammelschienen und Speisekabel in industriellen Werken.<br>•Speisekabel und kurze Zuleitungen, Verteilungstafeln<br>•Beleuchtungssysteme in größeren Gebäuden<br>•Steckdosen für große Lasten mit kurzen Leitungen zur Zuführung derVersorgungsenergie
+</p>
+</article>
+<article id="CAT VI" class="tool-secton">
+   <h2>CAT VI</h2>
+   <img src="IMG/zehler.jpg" alt="CAT VI">
+   <p>
+Bezieht sich auf den “Ursprung der Installation”, d.h., wo die Niederspannungs-Verbindung mit dem Elektrizitätswerk hergestellt wird <br>•Elektrizitätsmesser, primäre Überstrom-Schutzvorrichtungen<br>•Im Freien und Zuführung der Versorgungskabel, Versorgungsleitungen vomAnschlußpunkt zum Gebäude, Verbindung zwischen Meßgerät und Schalttafel.•Freileitungen zu einzelnen Gebäuden, Erdkabel zu Wasserpumpen.
+</p>
+</article>
+ <button id="backToTop" title="Powrót na górę">⬆</button>
+
+  <script>
+    // przewijanie do wybranego narzędzia
+    function scrollToTool(id) {
+      const el = document.getElementById(id);
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // przycisk powrotu na górę
+    const btn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      btn.style.display = (window.scrollY > 300) ? "block" : "none";
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</main>
+<footer>
+<p>&copy; 2025 Elektriker-Lernplattform  Bennet Mark Grussie Tom Maciej Luczak </p>
+</footer>
+</body>
+</html>
